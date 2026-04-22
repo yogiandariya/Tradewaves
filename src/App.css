@@ -1,0 +1,151 @@
+/* Global App Styles */
+
+
+/* Custom scrollbar for the entire app */
+
+* {
+    scrollbar-width: thin;
+    scrollbar-color: var(--border-color) var(--secondary-bg);
+}
+
+
+/* Focus styles for better accessibility */
+
+*:focus {
+    outline: 2px solid var(--accent-primary);
+    outline-offset: 2px;
+}
+
+
+/* Selection styles */
+
+::selection {
+    background: var(--accent-primary);
+    color: white;
+}
+
+::-moz-selection {
+    background: var(--accent-primary);
+    color: white;
+}
+
+
+/* Loading animations */
+
+@keyframes pulse {
+    0%,
+    100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.5;
+    }
+}
+
+@keyframes shimmer {
+    0% {
+        background-position: -200px 0;
+    }
+    100% {
+        background-position: calc(200px + 100%) 0;
+    }
+}
+
+.loading-pulse {
+    animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+.loading-shimmer {
+    background: linear-gradient(90deg, var(--card-bg) 25%, var(--card-hover) 50%, var(--card-bg) 75%);
+    background-size: 200px 100%;
+    animation: shimmer 2s infinite;
+}
+
+
+/* Trading-specific animations */
+
+@keyframes price-up {
+    0% {
+        background: var(--accent-success);
+    }
+    100% {
+        background: transparent;
+    }
+}
+
+@keyframes price-down {
+    0% {
+        background: var(--accent-danger);
+    }
+    100% {
+        background: transparent;
+    }
+}
+
+.price-change-up {
+    animation: price-up 1s ease-out;
+}
+
+.price-change-down {
+    animation: price-down 1s ease-out;
+}
+
+
+/* Glassmorphism utility classes */
+
+.glass-light {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.glass-medium {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.glass-heavy {
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+
+/* Gradient text utilities */
+
+.gradient-text-primary {
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.gradient-text-success {
+    background: var(--gradient-success);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.gradient-text-danger {
+    background: var(--gradient-danger);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+
+/* Responsive utilities */
+
+@media (max-width: 768px) {
+    .hide-mobile {
+        display: none !important;
+    }
+}
+
+@media (min-width: 769px) {
+    .hide-desktop {
+        display: none !important;
+    }
+}

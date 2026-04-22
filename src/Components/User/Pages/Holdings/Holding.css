@@ -1,0 +1,253 @@
+.holdings-container {
+    background-color: #ffffff;
+    color: #000000;
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 1200px;
+    margin: 20px auto;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    overflow-x: auto;
+}
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 1.4rem;
+}
+
+.holdings-summary {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    background-color: #f1f1f1;
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 30px;
+}
+
+.holdings-summary p {
+    text-align: center;
+    font-weight: bold;
+    font-size: 1.2rem;
+    margin: 0;
+    padding: 15px;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.holdings-summary span {
+    display: block;
+    font-weight: normal;
+    font-size: 0.9rem;
+    color: #666;
+    margin-top: 8px;
+}
+
+.holdings-table {
+    width: 100%;
+    min-width: 900px;
+    border-collapse: collapse;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+.holdings-table th,
+.holdings-table td {
+    padding: 15px;
+    text-align: left;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.holdings-table th {
+    background-color: #f1f1f1;
+    font-weight: bold;
+    color: #333;
+    white-space: nowrap;
+}
+
+
+/* Make the Company column text black (header and cells) */
+
+/*.holdings-table th:first-child {
+    color: #ffffff !important;
+}
+
+.holdings-table td:first-child {
+    color: #000 !important;
+}
+
+
+/* Ensure nested elements in Company column are also black */
+
+.holdings-table td:first-child .stock-info strong,
+.holdings-table td:first-child .stock-info small {
+    color: #000 !important;
+}
+
+.stock-info {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.stock-info strong {
+    color: #333;
+}
+
+.stock-info small {
+    color: #666;
+}
+
+.price-info,
+.returns-info,
+.value-info {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.value-info small {
+    color: #666;
+}
+
+.positive {
+    color: #00c853;
+    font-weight: bold;
+}
+
+.negative {
+    color: #d32f2f;
+    font-weight: bold;
+}
+
+.holdings-table tr:hover {
+    background-color: #f5f5f5;
+}
+
+.holdings-table tr:last-child td {
+    border-bottom: none;
+}
+
+.sell-btn {
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: background-color 0.2s;
+}
+
+.sell-btn:hover:not(:disabled) {
+    background-color: #c82333;
+}
+
+.sell-btn:disabled {
+    background-color: #dc354580;
+    cursor: not-allowed;
+}
+
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal-content {
+    background-color: white;
+    padding: 25px;
+    border-radius: 8px;
+    width: 90%;
+    max-width: 400px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+}
+
+.modal-content h2 {
+    margin: 0 0 20px 0;
+    color: #333;
+    font-size: 1.4rem;
+}
+
+.input-group {
+    margin: 20px 0;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 8px;
+    color: #333;
+    font-weight: 500;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 1rem;
+}
+
+.modal-actions {
+    margin-top: 25px;
+    display: flex;
+    justify-content: flex-end;
+    gap: 12px;
+}
+
+.cancel-btn {
+    background-color: #6c757d;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: background-color 0.2s;
+}
+
+.cancel-btn:hover {
+    background-color: #5a6268;
+}
+
+.error {
+    color: #dc3545;
+    text-align: center;
+    padding: 15px;
+    background: #f8d7da;
+    border-radius: 8px;
+    margin: 20px auto;
+    max-width: 600px;
+}
+
+@media screen and (max-width: 768px) {
+    .holdings-container {
+        margin: 10px;
+        padding: 15px;
+    }
+    .holdings-summary {
+        padding: 15px;
+        gap: 15px;
+    }
+    h1 {
+        font-size: 1.2rem;
+    }
+    .modal-content {
+        padding: 20px;
+    }
+}

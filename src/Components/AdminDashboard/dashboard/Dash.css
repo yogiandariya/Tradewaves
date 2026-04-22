@@ -1,0 +1,19 @@
+.admin-dashboard {
+    display: flex;
+    flex-direction: column;
+    background: var(--primary-bg);
+    min-height: 100vh;
+}
+
+.dashboard-container {
+    display: flex;
+    flex: 1;
+    flex-direction: row;
+}
+
+.dashboard-content {
+    flex: 1;
+    overflow-y: auto;
+    padding: var(--spacing-lg);
+    background: var(--secondary-bg);
+}

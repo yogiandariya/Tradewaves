@@ -1,0 +1,30 @@
+/* Header.css */
+.Header {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 12px;
+
+  width: 100%;
+  padding: 12px 20px;
+
+  background: #ffffff16;              /* clean white background */
+  border-bottom: 1px solid #e5e7eb; /* subtle divider line */
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.Header img {
+  border-radius: 8px; /* soft rounded edges for logo */
+}
+
+.Header .ant-typography {
+  margin: 0;
+  font-size: xx-large;
+  font-weight: 600;
+  color: #1f2937; /* neutral dark text */
+  letter-spacing: 0.5px;
+}

@@ -1,0 +1,346 @@
+.nav-query-button {
+  margin-right: 8px;
+  background-color: #6301d3;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: large;
+}
+
+.nav-query-button:hover {
+    background-color: #00b061;
+  
+}
+
+/* Navbar Styles */
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: var(--spacing-md) var(--spacing-lg);
+    background: var(--gradient-card);
+    backdrop-filter: blur(20px);
+    border-bottom: 1px solid var(--border-color);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: var(--shadow-sm);
+    flex-wrap: wrap;
+}
+
+
+/* Left Section */
+
+.navbar-left {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-md);
+    flex-shrink: 0;
+}
+
+.logo {
+    height: 45px;
+    width: 45px;
+    border-radius: 50%;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
+    transition: all var(--transition-normal);
+    cursor: pointer;
+}
+
+.logo:hover {
+    transform: scale(1.1) rotate(5deg);
+    filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.4));
+}
+
+.brand-name {
+    font-size: 1.5rem;
+    font-weight: 700;
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    font-family: var(--font-primary);
+    letter-spacing: -0.02em;
+    transition: all var(--transition-normal);
+}
+
+.brand-name:hover {
+    transform: scale(1.05);
+    filter: brightness(1.2);
+}
+
+
+/* Badge Notification */
+
+.badge {
+    position: absolute;
+    top: -3px;
+    right: -3px;
+    width: 8px;
+    height: 8px;
+    background: var(--gradient-danger);
+    border-radius: 50%;
+    box-shadow: 0 0 8px rgba(239, 68, 68, 0.5);
+}
+
+
+/* Right Section */
+
+.navbar-right {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-md);
+    flex-shrink: 0;
+}
+
+.logout-button {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+    transition: all var(--transition-normal);
+    font-weight: 600;
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+    background: var(--gradient-danger);
+    box-shadow: var(--shadow-sm);
+}
+
+.logout-button::before {
+    /* content: ''; */
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    transition: left var(--transition-slow);
+}
+
+.logout-button:hover::before {
+    left: 100%;
+}
+
+.logout-button:hover {
+    transform: scale(1.1) rotate(5deg);
+    box-shadow: var(--shadow-glow);
+}
+
+.logout-button:active {
+    transform: scale(0.95);
+}
+
+.logout-icon {
+    width: 24px;
+    height: 24px;
+    transition: all var(--transition-normal);
+    filter: brightness(0) invert(1);
+    opacity: 0.9;
+}
+
+.logout-symbol {
+    width: 24px;
+    height: 24px;
+    transition: all var(--transition-normal);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.3)); */
+}
+
+.logout-button:hover .logout-icon {
+    transform: scale(1.1);
+    opacity: 1;
+    filter: brightness(0) invert(1) drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
+}
+
+.logout-button:hover .logout-symbol {
+    transform: scale(1.1);
+    color: white;
+}
+
+.profile-button {
+    background: var(--gradient-primary);
+    color: white;
+    padding: var(--spacing-sm) var(--spacing-lg);
+    border-radius: var(--radius-md);
+    cursor: pointer;
+    border: none;
+    transition: all var(--transition-normal);
+    font-weight: 500;
+    font-size: 0.875rem;
+}
+
+.profile-button:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
+}
+
+
+/* Navigation Links */
+
+.nav-links {
+    display: flex;
+    justify-content: center;
+    gap: var(--spacing-xl);
+    padding: var(--spacing-md) 0;
+    background: var(--secondary-bg);
+    border-bottom: 1px solid var(--border-color);
+    flex: 1;
+    margin: 0 var(--spacing-lg);
+}
+
+.nav-item {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 1.1rem;
+    color: var(--text-secondary);
+    text-decoration: none;
+    transition: all var(--transition-normal);
+    font-weight: 600;
+    padding: var(--spacing-md) var(--spacing-lg);
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    min-width: 120px;
+}
+
+.nav-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+    transition: left var(--transition-slow);
+}
+
+.nav-item:hover::before {
+    left: 100%;
+}
+
+.nav-item i {
+    font-size: 1.5rem;
+    margin-bottom: var(--spacing-sm);
+    transition: all var(--transition-normal);
+    position: relative;
+    z-index: 1;
+}
+
+.nav-item span {
+    font-size: 1rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+}
+
+.nav-item:hover {
+    color: var(--text-primary);
+    background: var(--card-bg);
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-lg);
+}
+
+.nav-item:hover i {
+    transform: scale(1.3) rotate(10deg);
+    color: var(--accent-primary);
+}
+
+.nav-item.active {
+    color: var(--accent-primary);
+    background: var(--card-bg);
+    box-shadow: var(--shadow-md);
+}
+
+.nav-item.active i {
+    color: var(--accent-primary);
+    animation: pulse 2s infinite;
+}
+
+.nav-item::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 3px;
+    background: var(--gradient-primary);
+    transition: width var(--transition-normal);
+    border-radius: 2px;
+}
+
+.nav-item.active::after {
+    width: 80%;
+}
+
+.nav-item:hover::after {
+    width: 70%;
+}
+
+
+/* Profile Container */
+
+.profile-container {
+    position: relative;
+}
+
+
+/* Responsive Navbar (Mobile View) */
+
+@media (max-width: 768px) {
+    .navbar {
+        padding: var(--spacing-sm) var(--spacing-md);
+        flex-direction: column;
+        gap: var(--spacing-sm);
+    }
+    .navbar-left {
+        order: 1;
+    }
+    .nav-links {
+        order: 2;
+        margin: 0;
+        gap: var(--spacing-md);
+        padding: var(--spacing-sm) 0;
+        width: 100%;
+    }
+    .navbar-right {
+        order: 3;
+        gap: var(--spacing-sm);
+    }
+    .brand-name {
+        font-size: 1.25rem;
+    }
+    .nav-item {
+        font-size: 0.9rem;
+        padding: var(--spacing-sm) var(--spacing-md);
+        min-width: 100px;
+    }
+    .nav-item i {
+        font-size: 1.25rem;
+    }
+    .nav-item span {
+        font-size: 0.875rem;
+    }
+    .logout-button {
+        width: 45px;
+        height: 45px;
+    }
+    .logout-icon {
+        width: 20px;
+        height: 20px;
+    }
+    .logout-symbol {
+        font-size: 1.75rem;
+    }
+}

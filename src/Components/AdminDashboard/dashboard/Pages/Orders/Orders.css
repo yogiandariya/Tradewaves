@@ -1,0 +1,116 @@
+.orders-container {
+    width: 80%;
+    font-family: Arial, sans-serif;
+    color: #000000;
+}
+
+h2 {
+    margin-bottom: 20px;
+    color: #000000;
+}
+
+.orders-table {
+    width: 100%;
+    border-collapse: collapse;
+    border: 2px solid black;
+    background-color: #ffffff;
+}
+
+.orders-table th,
+.orders-table td {
+    padding: 12px;
+    border: 1px solid black;
+    text-align: center;
+    color: #000000;
+    background-color: #ffffff;
+}
+
+.orders-table th {
+    background-color: #f2f2f2;
+    font-weight: bold;
+    color: #000000;
+}
+
+.orders-table tbody tr {
+    background-color: #ffffff;
+}
+
+.orders-table tbody tr:hover {
+    background-color: #f8f9fa;
+}
+
+.buy {
+    color: green;
+    font-weight: bold;
+}
+
+.sell {
+    color: red;
+    font-weight: bold;
+}
+
+.status.completed {
+    color: green;
+    font-weight: bold;
+}
+
+.status.pending {
+    color: orange;
+    font-weight: bold;
+}
+
+.status.canceled {
+    color: red;
+    font-weight: bold;
+}
+
+.filters {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+}
+
+.filters label {
+    font-size: 16px;
+    font-weight: 500;
+    color: #000000;
+}
+
+.filters input {
+    padding: 8px 10px;
+    font-size: 14px;
+    border: 1px solid #656568;
+    border-radius: 5px;
+    outline: none;
+    background-color: #ffffff;
+    color: #000000;
+}
+
+.search-btn,
+.download-btn {
+    padding: 10px 15px;
+    font-size: 14px;
+    font-weight: bold;
+    color: rgb(255, 255, 255);
+    background-color: rgb(13, 28, 238);
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+}
+
+.search-btn {
+    background: linear-gradient(135deg, #007BFF, #0056b3);
+    color: white;
+}
+
+.download-btn {
+    background: linear-gradient(135deg, #28a745, #20c997);
+    color: white;
+}
+
+.download-btn:hover {
+    background: linear-gradient(135deg, #218838, #1ea085);
+}

@@ -1,0 +1,160 @@
+.user-dashboard-container {
+    background: var(--primary-bg);
+    min-height: 100vh;
+    padding: var(--spacing-lg);
+}
+
+.summary-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: var(--spacing-lg);
+    margin-bottom: var(--spacing-xl);
+}
+
+.summary-card {
+    background: var(--gradient-card);
+    backdrop-filter: blur(20px);
+    border-radius: var(--radius-lg);
+    padding: var(--spacing-xl);
+    box-shadow: var(--shadow-md);
+    text-align: center;
+    transition: all var(--transition-normal);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    position: relative;
+    overflow: hidden;
+}
+
+.summary-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: var(--gradient-primary);
+}
+
+.summary-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-lg);
+    border-color: rgba(255, 255, 255, 0.2);
+}
+
+.summary-card h3 {
+    color: var(--text-secondary);
+    margin: 0 0 var(--spacing-md) 0;
+    font-size: 1rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.summary-card p {
+    color: var(--text-primary);
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin: var(--spacing-md) 0;
+    font-family: var(--font-mono);
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.summary-card small {
+    color: var(--text-muted);
+    font-size: 0.875rem;
+    display: block;
+    margin-top: var(--spacing-sm);
+    font-weight: 400;
+}
+
+.search-section {
+    background: var(--gradient-card);
+    backdrop-filter: blur(20px);
+    border-radius: var(--radius-lg);
+    padding: var(--spacing-xl);
+    box-shadow: var(--shadow-md);
+    margin-top: var(--spacing-lg);
+    flex: 1;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.search-section h2 {
+    color: var(--text-primary);
+    margin: 0 0 var(--spacing-lg) 0;
+    font-size: 1.5rem;
+    font-weight: 600;
+    border-bottom: 2px solid var(--border-color);
+    padding-bottom: var(--spacing-md);
+    position: relative;
+}
+
+.search-section h2::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 60px;
+    height: 2px;
+    background: var(--gradient-primary);
+    border-radius: 1px;
+}
+
+
+/* Trading-specific colors */
+
+.positive {
+    color: var(--text-success) !important;
+    text-shadow: 0 0 8px rgba(0, 212, 170, 0.3);
+}
+
+.negative {
+    color: var(--text-danger) !important;
+    text-shadow: 0 0 8px rgba(255, 107, 107, 0.3);
+}
+
+
+/* Additional utility classes for trading data */
+
+.trading-value {
+    font-family: var(--font-mono);
+    font-weight: 600;
+}
+
+.percentage-change {
+    font-size: 0.875rem;
+    font-weight: 500;
+    padding: var(--spacing-xs) var(--spacing-sm);
+    border-radius: var(--radius-sm);
+    display: inline-block;
+}
+
+.percentage-change.positive {
+    background: rgba(0, 212, 170, 0.1);
+    border: 1px solid rgba(0, 212, 170, 0.2);
+}
+
+.percentage-change.negative {
+    background: rgba(255, 107, 107, 0.1);
+    border: 1px solid rgba(255, 107, 107, 0.2);
+}
+
+
+/* Responsive Design */
+
+@media (max-width: 768px) {
+    .user-dashboard-container {
+        padding: var(--spacing-md);
+    }
+    .summary-cards {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-md);
+    }
+    .summary-card {
+        padding: var(--spacing-lg);
+    }
+    .summary-card p {
+        font-size: 2rem;
+    }
+    .search-section {
+        padding: var(--spacing-lg);
+    }
+}

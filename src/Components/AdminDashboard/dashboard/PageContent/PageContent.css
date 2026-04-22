@@ -1,0 +1,13 @@
+.PageContent {
+    flex: 1;
+    padding: 20px;
+    background-color: #f4f4f4;
+    min-height: 84vh;
+    overflow-y: auto; 
+}
+.Home {
+    display: flex;
+     height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+}
